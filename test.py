@@ -33,3 +33,12 @@ int main(int argc, char* argv[]) {
                 capture_output=True, text=True, check=True,
                 )
             return result.stdout.strip()
+    def test_stable(self):
+        self.assertEqual(self.check_stability(3), "1")
+
+    def test_unstable(self):
+        self.assertEqual(self.check_stability(4), "0")
+
+
+    if __name__ == "__main__":
+        unittest.main()
